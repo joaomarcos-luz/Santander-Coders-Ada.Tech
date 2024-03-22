@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relogio</title>
+</head>
+<body>
+    <h1>Horário de Brasília</h1>
+    <div id="relogio">
+        
+    </div>
+
+    <script>
+       const horas = () => {
+        const dataAtual = new Date()
+        const hora = dataAtual.getHours().toString().padStart(2, 0)//toString(): Objeto em string.
+        const minutos = dataAtual.getMinutes().toString().padStart(2, 0)//padStart() so funciona em string por isso foi preciso ultilizar o toString.
+        const segundos = dataAtual.getSeconds().toString().padStart(2, 0)//padStart(2, 0) o primeiro parametro fala que tem que ser no minimu 2 caracter quando for apenas 1 ele adicionara o 0 a frente.
+
+        return `${hora}:${minutos}:${segundos}`
+       }
+
+       setInterval(() => { //O  setInterval é usado para que á hora seja atualizada na tela.
+      document.getElementById("relogio").innerHTML = horas();
+    }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratar Erro</title>
+</head>
+<body>
+    <script>
+        var numero
+
+        try {
+            numero=prompt("Dugite um número: ")
+            if(numero > 10)
+            throw new Error("Valor invalido valor maximo é: 10")
+        } catch (e) {
+            console.log("ERRO:" + e.message)
+            numero = 10
+        }finally{
+            document.write("valor:" + numero)
+        }
+    </script>
+</body>
+</html>

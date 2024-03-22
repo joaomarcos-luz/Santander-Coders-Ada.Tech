@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar cor da página</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Troque a cor da Pagina</h1>
+    <button onclick="alteraCor()">Alterar a cor</button>
+    <p>clique no botão a cima é altere a cor da página.</p>
+
+    <script>
+        function alteraCor() {
+            const corAtual = document.body.style.backgroundColor
+            if(corAtual === "black") {
+                document.body.style.backgroundColor = "blue"
+                document.body.style.color = "black"
+            } else {
+                document.body.style.backgroundColor = "black"
+                document.body.style.color = "white"
+            }
+        }
+    </script>
+</body>
+</html>
