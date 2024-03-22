@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando o DOM</title>
+  </head>
+  <body style="padding: 0 1rem">
+    <h1>Manipulando o DOM</h1>
+
+    <p class="paragraph">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti minus
+      eum fugit cum quos molestias esse perferendis, maiores vitae maxime quidem
+      voluptates facilis non porro ad aspernatur eveniet officiis. Distinctio?
+    </p>
+
+    <p class="paragraph">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, laborum,
+      perspiciatis est nihil in inventore voluptates velit ut eveniet veniam
+      possimus earum atque, quod explicabo rem rerum! Amet, blanditiis placeat?
+    </p>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png"
+      alt="Logo do JavaScript"
+      width="150"
+      class="logo"
+    />
+
+    <p class="paragraph after-img">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas
+      velit earum consequatur fuga excepturi voluptates neque ipsum, voluptate
+      tenetur ea error optio! Provident magnam repellendus est quisquam qui
+      magni.
+    </p>
+
+    <section style="margin-top: 2rem" id="form-section">
+      <h2>Formulário</h2>
+      <form style="margin-top: 0.5rem">
+        <label for="course">Curso:</label>
+        <input id="course" name.="course" type="course" />
+      </form>
+    </section>
+
+    <script>
+       const paragrafo = document.getElementsByTagName("p")
+       for (const paragrafos of paragrafo) {//For of passa em todos os pararafos alterando a cor.
+            paragrafos.style.color = "Blue"
+       }
+
+       const elementos = document.getElementsByClassName("paragraph")//foi alterado os paragrafos com a class: paragraph.
+       for(let i = 0; i < elementos.length; i++){//foi ultilizado o for normal.
+        elementos[i].innerText = "mensagem do paragrafo alterada usando dom em js."//InnerText só altera texto.
+       }
+    //usei o id para altera a cor de fundo da section com Id: form-section.
+       const 
+    </script>
+  </body>
+</html>
