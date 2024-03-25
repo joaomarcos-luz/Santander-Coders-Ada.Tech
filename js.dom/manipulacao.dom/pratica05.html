@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionando elementos no HTML</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Aprender sobre o DOM</li>
+      <li>Entender o querySelector</li>
+      <li>Utilizar o innerHTML</li>
+    </ul>
+
+    <script>
+        //Buscar a lista existente.
+      const lista = document.querySelector("ul#lista")
+
+        //Busca os itens da lista já existente.
+      const itemExistentes = document.querySelectorAll("li")
+
+        //Adicionando um novo item a lista.
+      const novoItem = document.createElement("li")
+
+        //Adicionando valor ao item da lista criado.
+      novoItem.textContent = "Adicionando usando insertBefore ✅"
+
+        /*Pega a lista existente ponto insertBefo(1ºParametro, 2ºParametro)
+
+        No insertBefo(): no 1ºParametro e colocado o item criado usando Dom.
+
+        No insertBefo(): no 2ºParametro ea posição na lista que iremos adicionar o novo item criado a lista usando Dom.
+        */
+      lista.insertBefore(novoItem, itemExistentes[1])
+      //O insertBefo() permite ecolher qual posição por index adicionar o novo item.
+
+      //Já o ppendChild() adiciona sempre o novo item ao final da lista o ultimo index da lista.
+    </script>
+  </body>
+</html>

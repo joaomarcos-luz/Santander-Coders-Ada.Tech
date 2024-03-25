@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionando elementos no HTML</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Aprender sobre o DOM</li>
+      <li>Entender o querySelector</li>
+      <li>Utilizar o innerHTML</li>
+    </ul>
+
+    <script>
+        //Explicações documentadas nas praticas anteriores.
+
+        //Pegando a lista
+        const lista = document.querySelector("ul#lista")
+
+        //Criando novo item a lista
+        const novoItem = document.createElement("li")
+
+        //Pegando todos itens da lista
+        const itensDaLista = document.querySelectorAll("li")
+
+        //Também poderia ser usado novoItem.textContent = "Texto do novo item da lista."
+        novoItem.innerHTML = "Texto do novo item adicionado a lista."
+
+        /*
+        itensDaLista[1] sera adicionado na posição do index 1, posição 2 da lista.   index 0, 1, 2 : começa sempre por 0 o index que é a posção do item na lista.
+        */
+        //novoItem: novo item criado
+        //itensDaLista[1] adicionar o novoItem a lista na posição do index 1.
+        lista.insertBefore(novoItem, itensDaLista[1])
+        
+        /*Removi o primeiro item dalista: os itens estao na variavel itensDaLista e acessei a posição do item da lista pelo [0] seu index nessse caso o index 0 que é a primeira posição de intens da lista.*/
+        lista.removeChild(itensDaLista[0])
+    </script>
+  </body>
+</html>

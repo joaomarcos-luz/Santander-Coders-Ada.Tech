@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuta de Eventos</title>
+  </head>
+  <body>
+    <h1>Lista de Compras</h1>
+
+    <div>
+      <input id="input" />
+      <button id="add">Adicionar</button>
+    </div>
+
+    <ul id="lista"></ul>
+
+    <script>
+      const button = document.querySelector("button")
+      const input = document.querySelector("input#input")
+      const lista = document.querySelector("ul#lista")
+
+      button.addEventListener("click", (event) => {
+        lista.innerHTML += `<li>${input.value}</li>`
+      })
+      /*
+      Essa seria uma solução mais simples. Apenas estamos obtendo os elementos necessários (input, button e lista) e adicionamos um event listener de clique no botão. Quando ocorre um clique no botão, adiciona-se uma li dentro do elemento ul (lista) com o conteúdo que o usuário digitou no input.
+
+        Observe que foi utilizado o innerHTML para incrementar a li ao final da ul, mas você pode utilizar o createElement e appendChild, se preferir.
+      */
+    </script>
+  </body>
+</html>

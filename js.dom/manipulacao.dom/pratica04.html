@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionando elementos no HTML</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Aprender sobre o DOM</li>
+      <li>Entender o querySelector</li>
+      <li>Utilizar o innerHTML</li>
+    </ul>
+
+    <script>
+      const lista =  document.querySelector("ul#lista")//Chamando a lista
+
+      const novoItem = document.createElement("li")//Adicionando uma nova tag item da lista
+      
+      novoItem.textContent  = "Olá adicionei um novo item a lista."//adicionando um texto ao novo item da lista
+
+      lista.appendChild(novoItem)// adicionando o novo itema a lista.
+    </script>
+  </body>
+</html>

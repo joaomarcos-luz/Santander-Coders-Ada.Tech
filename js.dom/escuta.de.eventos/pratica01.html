@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuta de Eventos</title>
+  </head>
+  <body>
+    <h1>Lista de Compras</h1>
+
+    <div>
+      <input id="input" />
+      <button id="add">Adicionar</button>
+    </div>
+
+    <ul id="lista"></ul>
+
+    <script>
+        //Pegar o valor do botão.
+      const botao = document.querySelector("button")
+      const input = document.querySelector("input#input")
+        
+        //Adicionar um evente liste ao botão ao clicar no botao vai emitir um alert.
+      botao.addEventListener("click", () => {
+        window.alert("Vocè clicou no botão adicionar!")
+      })
+    </script>
+  </body>
+</html>

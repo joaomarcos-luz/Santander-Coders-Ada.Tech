@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionando elementos no HTML</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Aprender sobre o DOM</li>
+      <li>Entender o querySelector</li>
+      <li>Utilizar o innerHTML</li>
+    </ul>
+
+    <script>
+        //Pode pegar o index da lista pelo querySelectorAll("li")[1] ou pelo exemplo a baixo.
+      /*const lista = document.querySelector("ul#lista")
+
+      const removeItem = document.querySelectorAll("li")[1]
+
+      lista.removeChild(removeItem)*/
+
+        //Pegando os valores da lista.
+      const lista = document.querySelector("ul#lista")
+
+        //Pegando os itens da lista.
+      const removeItem = document.querySelectorAll("li")
+
+        /*
+        Valores da lista ponto removeChild( removeItem: que é os itens da lista, [1] remove o item daa lista pela sua posição do seu index na lista. )
+        */
+      lista.removeChild(removeItem[1])
+    </script>
+  </body>
+</html>
