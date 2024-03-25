@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando o DOM</title>
+  </head>
+  <body style="padding: 0 1rem">
+    <h1>Manipulando o DOM</h1>
+
+    <p class="paragraph">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti minus
+      eum fugit cum quos molestias esse perferendis, maiores vitae maxime quidem
+      voluptates facilis non porro ad aspernatur eveniet officiis. Distinctio?
+    </p>
+
+    <p class="paragraph">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, laborum,
+      perspiciatis est nihil in inventore voluptates velit ut eveniet veniam
+      possimus earum atque, quod explicabo rem rerum! Amet, blanditiis placeat?
+    </p>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png"
+      alt="Logo do JavaScript"
+      width="150"
+      class="logo"
+    />
+
+    <p class="paragraph after-img">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas
+      velit earum consequatur fuga excepturi voluptates neque ipsum, voluptate
+      tenetur ea error optio! Provident magnam repellendus est quisquam qui
+      magni.
+    </p>
+
+    <section style="margin-top: 2rem" id="form-section">
+      <h2 class="titulo">Formulário</h2>
+      <form style="margin-top: 0.5rem">
+        <label for="course">Curso:</label>
+        <input id="course" name="course" type="course" />
+      </form>
+    </section>
+
+    <script>
+        const novoTitulo = document.querySelector("section#form-section h2.titulo")
+        novoTitulo.innerHTML = "Novo Formulario com Dom, querySelector."//Usando o querySelector pegando um section co id form-section com um H2 com uma class titulo.
+
+        const inP = document.querySelectorAll("p")[1]//Alterando o segundo paragrafo, pedando o index
+        inP.innerText = "Alterado H1 usando querySelectorAll () [1]"
+
+        const paragrafos = document.querySelectorAll(".paragraph")
+        paragrafos.forEach(paragrafos => {//Altera a cor da fonte e cor do fundo de todos paragrafos.
+            paragrafos.style.color = "white"
+            paragrafos.style.backgroundColor = "peru"
+        })
+
+    </script> 
+  </body>
+</html>

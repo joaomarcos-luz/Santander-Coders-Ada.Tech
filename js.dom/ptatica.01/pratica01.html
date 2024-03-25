@@ -43,6 +43,10 @@
       </form>
     </section>
 
+    <div id="conteudo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nemo quae repudiandae rerum quibusdam ullam dolorem illum dolor tempora. Illum ex sapiente nesciunt doloribus at suscipit fugiat laborum repudiandae soluta.</p>
+    </div>
+
     <script>
        const paragrafo = document.getElementsByTagName("p")
        for (const paragrafos of paragrafo) {//For of passa em todos os pararafos alterando a cor.
@@ -53,8 +57,18 @@
        for(let i = 0; i < elementos.length; i++){//foi ultilizado o for normal.
         elementos[i].innerText = "mensagem do paragrafo alterada usando dom em js."//InnerText só altera texto.
        }
-    //usei o id para altera a cor de fundo da section com Id: form-section.
-       const 
+
+        //usei o id pra acessar a sectio usei a tagName para acessar h2 e [0] pra pegar o primeiro h2 que seja na posição 0. 
+       const tituloH2 = document.getElementById("form-section").getElementsByTagName("h2")[0]
+       tituloH2.innerText = "Novo titulo usando Dom."//como é um texto também poderia ser usado o innerText.
+
+       const conteudoDiv = document.getElementById("conteudo")
+       conteudoDiv.innerHTML = "<h4>Praticando manipulação de conteudo usando Dom.</h4>"
+       //Melhor forma de se usar o innerHTML pos pasa uma tagHTML e innerText so altera texto.
+
+       const input = document.getElementsByName("course")[0]
+       input.value = "programação"//Não da pra ver na tela mas atribui um novo valor ao nome do input.
+
     </script>
   </body>
 </html>
