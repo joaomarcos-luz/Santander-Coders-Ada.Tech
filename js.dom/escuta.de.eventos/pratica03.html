@@ -15,8 +15,36 @@
 
     <ul id="lista"></ul>
 
-    <script>
-      // Insira os códigos JavaScript aqui
+  <script>
+  const input = document.querySelector("input#input");
+  const button = document.querySelector("button");
+  const lista = document.querySelector("#lista");
+
+  button.addEventListener("click", (event) => {
+  if (input.value.length <= 2) {
+    // Lançar um alerta, caso o item tenha menos que 3 letras
+    window.alert("O item deve ter, pelo menos, 3 letras.");
+  } else {
+    // Adicionando um novo item com o createElement e appendChild
+    const novoItem = document.createElement("li");
+    novoItem.textContent = input.value;
+    lista.appendChild(novoItem);
+
+    // Adicionando o event listener para remover o novo
+    // item, caso haja um clique sobre ele
+    // (veja a função removerItem abaixo)
+    novoItem.addEventListener("click", removerItem);//removerItem que é uma function ao inves de chamar a functio podemos já fazer ela aqui dentro como veremos no proximo codico.
+
+    // Limpando o conteúdo do input quando o item é adicionado
+    input.value = "";
+    }
+  });
+
+    // Função chamada quando o ocorre o evento de clique
+    // sobre um item
+  function removerItem(event) {
+    lista.removeChild(event.target);
+  } 
     </script>
   </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuta de Eventos</title>
+  </head>
+  <body>
+    <h1>Lista de Compras</h1>
+
+    <div>
+      <input id="input" />
+      <button id="add">Adicionar</button>
+    </div>
+
+    <ul id="lista"></ul>
+
+    <script>
+      const button = document.querySelector("button")
+      const lista = document.querySelector("ul#lista")
+      const input = document.querySelector("input#input")
+
+      button.addEventListener("click", (event) => {
+        if (input.value.length <= 2) {
+            window.alert("O item deve ter no minimo 3 latras.")
+        } else {
+            lista.innerHTML += `<li>${input.value}</li>`
+            //Desta forma usei o innerHTML pra já adicionar um novo item a lista e não precisando usar createElemente e textContent.
+
+            const li = document.querySelectorAll("li")//buscando todos itens da lista.
+            li.forEach(li => {//Usei o forEach para perrcorrer todos itens da lista.
+                li.addEventListener("click", (event) => {
+                    lista.removeChild(event.target)
+                })
+            })
+
+            input.value = ""//Apos adicionar o novo item o input ficara em branco, fazendo o reset do campo para escrever.
+        }
+      })
+    </script>
+  </body>
+</html>
