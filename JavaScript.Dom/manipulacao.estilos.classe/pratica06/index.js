@@ -16,12 +16,12 @@ const input = document.querySelector("input#input")
            inputNovoItem.addEventListener("click", (event) => {
             if(event.target.checked){
                 textoNovoItem.setAttribute("class", "checked")
-                inputNovoItem.setAttribute("class", "checked")
-                /*Caso o input checkbox deja clicado adicionara a class chacked ao span e button e assim pegando o Css do estilo.js e ao tira a marcação ele remove a class do span e button.
+                buttonRemoverNovoItem.setAttribute("class", "checked")
+                /*Caso o input checkbox deja clicado adicionara a class chacked ao span e button e assim pegando o Css do estilo.js e ao tira a marcação ele remove a class do span e button.5 
                 */ 
             }else{
                 textoNovoItem.removeAttribute("class")
-                inputNovoItem.removeAttribute("class")
+                buttonRemoverNovoItem.removeAttribute("class")
             }
            })
 
