@@ -16,7 +16,38 @@
     <ul id="lista"></ul>
 
     <script>
-      
+      const lista = document.querySelector("ul#lista")
+      const button = document.querySelector("button")//Estou pedando assiim por só existir um no HTML.
+      const inout = document.querySelector("input#input")
+
+      button.addEventListener("click", (event) => {
+        if (input.value.length <= 2) {
+            window.alert("O item deve ter pelo menos 3 letras.")
+        } else {
+            const novoItem = document.createElement("li")
+            const checkBoxItem = document.createElement("input")
+            const textoItem = document.createElement("span")
+            const removeButtonItem = document.createElement("button")
+
+            textoItem.textContent = input.value
+
+            checkBoxItem.setAttribute("type", "checkBox")
+
+            removeButtonItem.textContent = "Remover"
+
+            novoItem.insertAdjacentElement("beforeend", checkBoxItem)
+            novoItem.insertAdjacentElement("beforeend", textoItem)
+            novoItem.insertAdjacentElement("beforeend", removeButtonItem)
+
+            lista.appendChild(novoItem)
+
+            removeButtonItem.addEventListener("click", (event) => {
+                lista.removeChild(event.target.parentElement)
+            })
+
+            input.value = ""
+        }
+      })
     </script>
   </body>
 </html>

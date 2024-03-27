@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuta de Eventos</title>
+  </head>
+  <body>
+    <h1>Lista de Compras</h1>
+
+    <div>
+      <input id="input" />
+      <button id="add">Adicionar</button>
+    </div>
+
+    <ul id="lista"></ul>
+
+    <script>
+      const input = document.querySelector("input#input")
+      const button = document.querySelector("button#add")
+      const lista = document.querySelector("ul#lista")
+
+      button.addEventListener("click", (event) => {
+        if (input.value.length <= 2) {
+            window.alert("O item deve ter no minimo 3 letras.")
+        } else {
+            lista.innerHTML += `<li><input type="checkbox"><span>${input.value}</span><button class="remover">Remover</button></li>`;
+
+            const buttonRemover = document.querySelectorAll("button.remover")
+            buttonRemover.forEach(buttonRemover => {
+                buttonRemover.addEventListener("click", (event) => {
+                    lista.removeChild(event.target.parentElement)
+                })
+            })
+
+            input.value = ""
+        }
+      })
+    </script>
+  </body>
+</html>
