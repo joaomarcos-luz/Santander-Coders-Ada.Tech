@@ -22,6 +22,14 @@ const input = document.querySelector("input#input")
                 textoNovoItem.className = ""
                 inputNovoItem.className = ""
                  //Caso remova a marcação do checkbox sera retirado o nome da class.
+
+                 /*
+                 Em outras palavras, caso houvesse outras classes no span ou no input, as duas últimas soluções iriam "apagá-las" dos elementos. Isso não estaria certo, concorda?
+
+                Para evitar esse problema, podemos acessar o atributo classList do elemento em questão. Por meio dele, conseguimos acessar uma lista com todas as classes do nosso elemento. E, ainda melhor, esse atributo contém vários métodos que facilitam o nosso trabalho, como os métodos add e remove, que nos permitem adicionar e remover, respectivamente, uma classe da tag.
+
+                O código a seguir apresenta a solução que leva em consideração a possibilidade da existência de outras classes, fazendo uso do classList:
+                 */
             }
            })
 
