@@ -21,10 +21,17 @@ const input = document.querySelector("input#input")
                 //checked é quando a caixa ta marcada se tiver marcada o texto ficara riscado.
                 //checked marcado true.
                 //checked nao marcado false.
+
+                // Adicionando um novo atributo ao checkbox
                 if (event.target.checked) {
                     textoNovoItem.style.textDecoration = "line-through"
+                    textoNovoItem.style.opacity = "0.6"//Quais meio trasparente.
+                    inputNovoItem.style.opacity = "0.6"
+                    /*opacity vai deixar o input e texto trasparente sendo 1 pra normal e 0 para todo trasparente*/
                 } else {
                     textoNovoItem.style.textDecoration = "none"
+                    textoNovoItem.style.opacity = "1"//Normal
+                    inputNovoItem.style.opacity = "1"
                 }
             })
 
