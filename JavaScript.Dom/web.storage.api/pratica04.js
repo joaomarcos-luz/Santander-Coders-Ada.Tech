@@ -1,14 +1,18 @@
-const listaDeCompras = [
-    { item: "Arroz", comprado: true },
-    { item: "Feijão", comprado: false },
-    { item: "Frango", comprado: true }
-];
+//sessionStorage
+//
 
-// Convertendo a lista de compras para uma string JSON e armazenando no localStorage
-localStorage.setItem("listaDeCompras", JSON.stringify(listaDeCompras));
+//Só roda no navegador.
 
-// Recuperando a lista de compras do localStorage e convertendo de volta para um objeto JavaScript
-const listaDeComprasLocalStorage = localStorage.getItem("listaDeCompras");
-const listaDeComprasRecuperada = JSON.parse(listaDeComprasLocalStorage || "[]");
+const idade = 27
+const altura = 1.75
 
-console.log(listaDeComprasRecuperada);
+sessionStorage.setItem("idade", String(idade))
+sessionStorage.setItem("altura", String(altura))
+
+sessionStorage.removeItem("idade")
+
+const idadeSessionStorage = sessionStorage.getItem("idade")
+const alturaSessionStorage = sessionStorage.getItem("altura")
+
+console.log(idadeSessionStorage)
+console.log(alturaSessionStorage)
