@@ -29,7 +29,7 @@ const promise = somarAsync(10, 20)
 promise.then((res) => console.log(res)).catch((err) => console.error(err))
 
 
-//Exemplo 02
+//Exemplo 03
 
 const somarAsync = (a, b) => {
     return new Promise((resolver, erro) => {
@@ -45,7 +45,7 @@ somarAsync(20, 20)
     .catch((err) => console.error(err))
 
 
-//Exemplo 03
+//Exemplo 04
 
 const somarAsync = (a, b) => {
     return new Promise((resolver, erro) => {
@@ -58,3 +58,36 @@ const somarAsync = (a, b) => {
 
 somarAsync(50, 50)
     .then((res) => console.log(res)).catch((err) => console.error(err))
+
+
+//Exemplo 05
+
+const somarAsync = (a, b) => {
+    return new Promise((resposta, error) => {
+        setTimeout(() => {
+            const res = a + b
+            resposta(res)
+        } ,1000)
+    })
+}
+
+somarAsync(100, 100).then(console.log).catch(console.error)
+
+
+//Exemplo 06
+
+const somarAsync = (a, b) => {
+    return new Promise((resposta, erro) => {
+        setTimeout(() => {
+            const res = a + b
+            resposta(res)
+        } ,1000)
+    })
+}
+
+somarAsync(40, 40)
+    .then((res) => somarAsync(res, 30))
+    .then((res) => somarAsync(res, 40))
+    .then((res) => somarAsync(res, 50))
+    .then(console.log)
+    .catch(console.error)
