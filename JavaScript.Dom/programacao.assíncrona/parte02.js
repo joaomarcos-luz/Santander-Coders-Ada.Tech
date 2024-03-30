@@ -31,4 +31,30 @@ promise.then((res) => console.log(res)).catch((err) => console.error(err))
 
 //Exemplo 02
 
-const
+const somarAsync = (a, b) => {
+    return new Promise((resolver, erro) => {
+        setTimeout(() => {
+            const res = a + b
+            resolver(res)
+        } ,1000)
+    })
+}
+
+somarAsync(20, 20)
+    .then((res) => console.log(res))
+    .catch((err) => console.error(err))
+
+
+//Exemplo 03
+
+const somarAsync = (a, b) => {
+    return new Promise((resolver, erro) => {
+        setTimeout(() => {
+            const res = a + b 
+            resolver(res)
+        } ,1000)
+    })
+}
+
+somarAsync(50, 50)
+    .then((res) => console.log(res)).catch((err) => console.error(err))
