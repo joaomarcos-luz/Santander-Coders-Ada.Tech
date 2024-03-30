@@ -16,3 +16,19 @@ promise.catch((err) => console.error(err))
 
 
 //Exemplo 02
+const somarAsync = (a, b) => {
+    return new Promise((resultado, erro) => {
+        setTimeout(() => {
+            const res = a + b
+            resultado(res)
+        },1000)
+    })
+}
+
+const promise = somarAsync(10, 20)
+promise.then((res) => console.log(res)).catch((err) => console.error(err))
+
+
+//Exemplo 02
+
+const
