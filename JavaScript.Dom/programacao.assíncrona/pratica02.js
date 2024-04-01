@@ -17,13 +17,14 @@ promise.catch((err) => console.error(err))
 
 //Exemplo 02
 const somarAsync = (a, b) => {
-    return new Promise((resultado, erro) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             const res = a + b
-            resultado(res)
-        },1000)
+            resolve(res)
+        } ,1000)
     })
 }
+
 
 const promise = somarAsync(10, 20)
 promise.then((res) => console.log(res)).catch((err) => console.error(err))
@@ -32,13 +33,14 @@ promise.then((res) => console.log(res)).catch((err) => console.error(err))
 //Exemplo 03
 
 const somarAsync = (a, b) => {
-    return new Promise((resolver, erro) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             const res = a + b
-            resolver(res)
+            resolve(res)
         } ,1000)
     })
 }
+
 
 somarAsync(20, 20)
     .then((res) => console.log(res))
@@ -48,13 +50,14 @@ somarAsync(20, 20)
 //Exemplo 04
 
 const somarAsync = (a, b) => {
-    return new Promise((resolver, erro) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const res = a + b 
-            resolver(res)
+            const res = a + b
+            resolve(res)
         } ,1000)
     })
 }
+
 
 somarAsync(50, 50)
     .then((res) => console.log(res)).catch((err) => console.error(err))
@@ -63,10 +66,10 @@ somarAsync(50, 50)
 //Exemplo 05
 
 const somarAsync = (a, b) => {
-    return new Promise((resposta, error) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             const res = a + b
-            resposta(res)
+            resolve(res)
         } ,1000)
     })
 }
@@ -77,10 +80,10 @@ somarAsync(100, 100).then(console.log).catch(console.error)
 //Exemplo 06
 
 const somarAsync = (a, b) => {
-    return new Promise((resposta, erro) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             const res = a + b
-            resposta(res)
+            resolve(res)
         } ,1000)
     })
 }
@@ -96,10 +99,10 @@ somarAsync(40, 40)
 //exemplo 07
 
 const somar = (a, b) => {
-    return new Promise((resp, erro) =>{
+    return new Promise((resolve, reject) =>{
         setTimeout(() => {
             const res = a + b
-            resp(res)
+            resolve(res)
         })
     })
 }

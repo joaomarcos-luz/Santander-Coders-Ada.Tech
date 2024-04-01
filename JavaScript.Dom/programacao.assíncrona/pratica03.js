@@ -208,7 +208,7 @@ Mas e o tratamento de erros, como ele funcionaria usando async / await? Da mesma
 const somar = (a, b) => {
     return new Promise((resolver, reject) => {
         setTimeout(() => {
-            const res = (a + b) / 3
+            const res = (a + b)
             resolver(res)
         },1000)
     })
@@ -220,8 +220,11 @@ const calcular = async () => {
         const res1 = await somar(10, 20)
         const res2 = await somar(res1, 30)
         const res3 = await somar(res2, 40)
-        const resultado = await somar(res3, 50)
-        console.log(resultado)
+        const res4 = await somar(res3, 50)
+        
+        const media = res4 / 3; // Número total de somas é 4
+
+        console.log(media);
     } catch (error) {
         console.error(error)
     }
