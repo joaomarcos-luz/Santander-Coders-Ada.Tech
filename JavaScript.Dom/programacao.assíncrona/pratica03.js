@@ -63,3 +63,38 @@ const calcular = async () => {
 
 
 //Exemplo 04
+const somarAsync = (a, b) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const res = a + b
+            resolve(res)
+        },1000)
+    })
+}
+
+somarAsync(10, 20)
+    .then((res) => somarAsync(res, 30))
+    .then((res) => somarAsync(res, 40))
+    .then((res) => somarAsync(res, 50))
+    .then((res) => console.log(res))
+    .catch((err) => console.error(err))
+
+
+//Exemplo 05
+const somarAsync = (a, b) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const res = a + b
+            resolve(res)
+        },1000)
+    })
+}
+
+somarAsync(10, 20)
+    .then((res) => somarAsync(res, 30))
+    .then((res) => somarAsync(res, 40))
+    .then((res) => somarAsync(res, 50))
+    .then(console.log)
+    .catch(console.error)
+
+
