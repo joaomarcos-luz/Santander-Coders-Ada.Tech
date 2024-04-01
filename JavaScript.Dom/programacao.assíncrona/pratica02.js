@@ -91,3 +91,22 @@ somarAsync(40, 40)
     .then((res) => somarAsync(res, 50))
     .then(console.log)
     .catch(console.error)
+
+
+//exemplo 07
+
+const somar = (a, b) => {
+    return new Promise((resp, erro) =>{
+        setTimeout(() => {
+            const res = a + b
+            resp(res)
+        })
+    })
+}
+
+somar(10, 10)
+    .then((res) => somar(res, 30))
+    .then((res) => somar(res, 40))
+    .then((res) => somar(res, 50))
+    .then(console.log)
+    .catch(console.error)
