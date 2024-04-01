@@ -178,7 +178,7 @@ const somarAsync = (a, b) => {
         setTimeout(() => {
             const soma = a + b
             resolve(soma)
-        })
+        },1000)
     })
 }
 
@@ -189,6 +189,8 @@ const calcular = async () => {
     const result = await somarAsync(res3, 50);
     console.log(result);
   };
+
+  /*Nesse caso não esperou por que o console.log foi colocado de forma global nao respeitando o await ser resolvido.*/
   
   console.log("invocando o somarAsync");
   calcular();
@@ -203,3 +205,26 @@ Mas e o tratamento de erros, como ele funcionaria usando async / await? Da mesma
 
 
 //Exemplo 09
+const somar = (a, b) => {
+    return new Promise((resolver, reject) => {
+        setTimeout(() => {
+            const res = (a + b) / 3
+            resolver(res)
+        },1000)
+    })
+}
+
+const calcular = async () => {
+
+    try {
+        const res1 = await somar(10, 20)
+        const res2 = await somar(res1, 30)
+        const res3 = await somar(res2, 40)
+        const resultado = await somar(res3, 50)
+        console.log(resultado)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+calcular()
