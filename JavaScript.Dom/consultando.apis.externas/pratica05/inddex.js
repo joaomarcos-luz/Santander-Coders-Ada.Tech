@@ -36,6 +36,6 @@ form.addEventListener("submit", async (event) => {
         }
     } catch (error) {
         console.error(error.message);
-        sectionRes.innerHTML = `<p>Erro ao obter dados do endereço. Tente novamente mais tarde.</p>`
+        sectionRes.innerHTML = `<p>Erro ao obter dados do CEP: ${cep}. Tente novamente mais tarde.</p>`
     }
 })
