@@ -1,4 +1,8 @@
 <div class="class">
     <p *ngIf="show">Exibir mensagem.</p>
-    bu
+    <button (click)="showMessage()">Click aqui</button>
+    <button (click)="helloWord()">Saudação!</button>
+    <div *ngIf="message">
+        <h1>Ola Mundo estou aprendendo eventos em angular.</h1>
+    </div>
 </div>
