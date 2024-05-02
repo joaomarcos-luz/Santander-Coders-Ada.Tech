@@ -15,8 +15,8 @@ export class ListService {
 
   constructor(private http: HttpClient) { }
 
-  remove(animais: Animal[], animal: Animal) {
-    return animais.filter(a => animal.name !== a.name)
+  remove(id: number) {
+    return this.http.delete<Animal>(`${this.apiUrlAnimais}/${id}`)
   }
 
   removeP(pessoas: Pessoa[], pessoa: Pessoa) {
@@ -29,6 +29,15 @@ export class ListService {
 
   getAl(): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.apiUrlPessoas);
+  }
+
+
+  getItem(id: number): Observable<Animal> {
+    return this.http.get<Animal>(`${this.apiUrlAnimais}/${id}`)
+  }
+
+  getIten(id: number){
+    return this.http.get<Pessoa>(`${this.apiUrlPessoas}/${id}`)
   }
 
 }

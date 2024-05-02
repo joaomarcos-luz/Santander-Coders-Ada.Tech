@@ -12,12 +12,6 @@ export class ListRenderComponent {
   animais: Animal[] = []
   pessoas: Pessoa[] = []
 
-
-
-  animal: Animal[] = [
-    {name: "Zeus", type: "Dog", age: 2}
-  ]
-
   aniamlDeTalls = ""
 
   constructor (private listService: ListService) {
@@ -30,7 +24,8 @@ export class ListRenderComponent {
   }
 
   removerAnimal(animal: Animal){
-    this.animais =   this.listService.remove(this.animais, animal)
+    this.animais = this.animais.filter(a => animal.name !== a.name)
+    this.listService.remove(animal.id).subscribe()
   }
 
   removePessoa(pessoa: Pessoa){

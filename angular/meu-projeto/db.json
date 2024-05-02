@@ -1,15 +1,38 @@
-
 {
-"animais": [
-    {"id": 1, "name": "Apollo", "type": "Dog", "age": 1},
-    {"id": 2, "name": "Dera", "type": "Cat", "age": 8},
-    {"id": 3, "name": "Zaia", "type": "Dog", "age": 4},
-    {"id": 4,"name": "Ventania", "type": "Horse", "age": 50}
+  "animais": [
+    {
+      "id": "3",
+      "name": "Zaia",
+      "type": "Dog",
+      "age": 4
+    },
+    {
+      "id": "4",
+      "name": "Ventania",
+      "type": "Horse",
+      "age": 50
+    }
   ],
   "pessoas": [
-    {"id": 1, "name": "João", "idade": 27},
-    {"id": 2, "name": "Paulo Ricardo", "idade": 13},
-    {"id": 3, "name": "Tainara", "idade": 24},
-    {"id": 4, "name": "Hevyny", "idade": 22}
-]
+    {
+      "id": "1",
+      "name": "João",
+      "idade": 27
+    },
+    {
+      "id": "2",
+      "name": "Paulo Ricardo",
+      "idade": 13
+    },
+    {
+      "id": "3",
+      "name": "Tainara",
+      "idade": 24
+    },
+    {
+      "id": "4",
+      "name": "Hevyny",
+      "idade": 22
+    }
+  ]
 }
