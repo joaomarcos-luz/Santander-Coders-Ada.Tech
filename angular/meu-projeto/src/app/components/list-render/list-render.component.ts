@@ -29,7 +29,8 @@ export class ListRenderComponent {
   }
 
   removePessoa(pessoa: Pessoa){
-    this.pessoas = this.listService.removeP(this.pessoas, pessoa)
+    this.pessoas = this.pessoas.filter(p => pessoa.name !== p.name)
+    this.listService.removeP(pessoa.id).subscribe()
   }
 
   getAnimais(): void {
